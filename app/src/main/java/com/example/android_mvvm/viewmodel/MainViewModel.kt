@@ -7,8 +7,8 @@ import com.example.android_advanced_kotlin.activity.model.Post
 import com.example.android_mvvm.respository.MainRepository
 
 class MainViewModel : ViewModel() {
-     var allPosts: MutableLiveData<ArrayList<Post>>? = null
-     var deletedPost: MutableLiveData<Post>? = null
+     var allPosts: LiveData<ArrayList<Post>>? = null
+     var deletedPost: LiveData<Post>? = null
 
     fun apiPostList(): LiveData<ArrayList<Post>>?{
         allPosts = MainRepository.apiPostList()
