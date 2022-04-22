@@ -58,7 +58,7 @@ class PostAdapter(var activity: MainActivity, var items: ArrayList<Post>) :
         val body = "Do you want to delete?"
         Utils.customDialog(activity, title, body, object : Utils.DialogListener {
             override fun onPositiveClick() {
-                activity.viewModel.apiPostDelete(post)!!.observe(activity, Observer {
+                activity.viewModel.apiPostDelete(post).observe(activity, Observer {
                     activity.viewModel.apiPostList()
                 })
             }

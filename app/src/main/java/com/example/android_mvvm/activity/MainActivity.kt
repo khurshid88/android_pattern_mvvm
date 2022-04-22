@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.setLayoutManager(GridLayoutManager(this, 1))
 
-        viewModel.apiPostList()!!.observe(this, Observer {
+        viewModel.apiPostList().observe(this, Observer {
             refreshAdapter(it)
         })
     }

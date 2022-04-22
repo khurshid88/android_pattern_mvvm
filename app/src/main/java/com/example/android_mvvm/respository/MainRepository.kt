@@ -15,12 +15,10 @@ object MainRepository {
         val allPosts = MutableLiveData<ArrayList<Post>>()
         RetrofitHttp.postService.listPost().enqueue(object : Callback<ArrayList<Post>> {
             override fun onResponse(call: Call<ArrayList<Post>>, response: Response<ArrayList<Post>>) {
-                Log.d("@@@allPosts ",allPosts.toString())
                 allPosts.value = response.body()
             }
 
             override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
-                Log.d("@@@allPosts ",t.toString())
                 allPosts.value = null
             }
         })
